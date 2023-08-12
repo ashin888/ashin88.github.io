@@ -1,56 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-  <title>Login page</title>
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   </head>
-   <body>
-      <div class="content">
-         <div class="text">
-            Login Form
-         </div>
-         <form action="#">
-            <div class="field">
-               <input id="username" type="text" required>
-               <span class="fas fa-user"></span>
-               <label>Email or Phone</label>
-            </div>
-            <div class="field">
-               <input id="password" type="password" required>
-               <span class="fas fa-lock"></span>
-               <label>Password</label>
-            </div>
-            <div class="forgot-pass">
-   <a onclick="alert('Please contact the admin to reset your password.');">Forgot Password?</a>
-</div>
-            <button onclick="validateLogin()">Sign in</button>
-            <div class="sign-up">
-   Not a member?
-   <a onclick="alert('Sign-up is currently unavailable. Please try again later.');">signup now</a>
-</div>
-         </form>
-      </div>
-      <script>
-         function validateLogin() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+  }
 
-            // You can customize this list of username-password pairs
-            var userCredentials = {
-                "ashin": "80",
-                "john": "12345",
-                "emma": "password123"
-                // Add more username-password pairs as needed
-            };
+  .neon-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #0f0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.6);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
 
-            if (userCredentials.hasOwnProperty(username) && userCredentials[username] === password) {
-                window.location.replace("./Home"); // Redirect to Home page
-            } else {
-                alert("Username or password is incorrect");
-            }
-         }
-      </script>
-   </body>
+  .neon-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.9), 0 0 25px rgba(0, 255, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.9);
+  }
+</style>
+</head>
+<body>
+  <a href="./Home.html" class="neon-button">Go to Home</a>
+</body>
 </html>
