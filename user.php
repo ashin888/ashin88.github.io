@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers_user = "From: afefx@outlook.in";
 
     // Admin Email
-    $to_admin = "admin_email@example.com";
+    $to_admin = "ashinop90@gmail.com";
     $subject_admin = "New Subscription!";
     $message_admin = "A new user subscribed: $user_email";
     $headers_admin = "From: $user_email";
