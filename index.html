@@ -11,10 +11,12 @@
          <div class="title">
             Our website is <span>Coming soon</span>, follow us <br> for update now!
          </div>
-         <form action="#" class="form">
-            <div class="email-field">
-               <input type="email" placeholder="Enter Email Address" required>
-               <button type="submit">Subscribe</button>
+         <form action="send_email.php" method="POST" class="form">
+   <div class="email-field">
+      <input type="email" name="user_email" placeholder="Enter Email Address" required>
+      <button type="submit">Subscribe</button>
+   </div>
+</form>
             </div>
          </form>
          <div class="count-down">
@@ -104,4 +106,4 @@
          }, 1000);
       </script>
    </body>
-</html>
+            </html>
