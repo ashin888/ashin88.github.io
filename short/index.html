@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>URL Shortener</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>URL Shortener</title>
 </head>
 <body>
-  <div class="container">
     <h1>URL Shortener</h1>
-    <label for="longUrl">Enter Long URL:</label>
+    <p>Enter your long URL:</p>
     <input type="text" id="longUrl" placeholder="https://www.example.com">
     <button id="generateButton">Generate Short URL</button>
-    <div id="shortUrlContainer"></div>
-  </div>
-  <script src="script.js"></script>
+    <p>Short URL:</p>
+    <a href="#" id="shortUrl" target="_blank"></a>
 </body>
 </html>
