@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Google Drive Direct Download</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Link Converter</title>
 </head>
 <body>
-    <div>
-        <label for="driveLink">Enter Google Drive Link:</label>
-        <input type="text" id="driveLink" placeholder="Paste Google Drive Link">
-        <button onclick="convertLink()">Convert</button>
-    </div>
-    <div id="output">
-        <!-- Output direct download link will be displayed here -->
+    <div class="container">
+        <h1>Google Drive Link Converter</h1>
+        <div class="input-container">
+            <input type="text" id="driveLink" placeholder="Paste Google Drive Link">
+            <button id="convertButton" onclick="convertLink()">Convert</button>
+        </div>
+        <div id="output" class="output-container">
+            <!-- Output will be added here -->
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
