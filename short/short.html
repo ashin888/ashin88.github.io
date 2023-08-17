@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>URL Shortener</title>
+</head>
+<body>
+  <div class="container">
+    <h1>URL Shortener</h1>
+    <label for="longUrl">Enter Long URL:</label>
+    <input type="text" id="longUrl" placeholder="https://www.example.com">
+    <button id="generateButton">Generate Short URL</button>
+    <div id="shortUrlContainer"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+	body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#shortUrlContainer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+</style>
+<script>
+	document.getElementById('generateButton').addEventListener('click', function () {
+  const longUrl = document.getElementById('longUrl').value;
+  if (longUrl) {
+    const shortUrl = generateShortUrl();
+    const shortUrlContainer = document.getElementById('shortUrlContainer');
+    shortUrlContainer.innerHTML = `<p>Short URL: <a href="${shortUrl}" target="_blank">${shortUrl}</a></p>`;
+    setTimeout(function () {
+      window.location.href = longUrl;
+    }, 2000);
+  }
+});
+
+function generateShortUrl() {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let shortUrl = '';
+  for (let i = 0; i < 4; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    shortUrl += characters.charAt(randomIndex);
+  }
+  return `http://ashin888.github.io/short/${shortUrl}`;
+}
+</script> 
