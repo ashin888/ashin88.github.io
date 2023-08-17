@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>URL Shortener</h1>
-        <input type="url" id="originalUrl" placeholder="Enter URL">
-        <button onclick="generateShortUrl()">Shorten</button>
-        <p>Shortened URL: <a id="shortUrl" target="_blank"></a></p>
-    </div>
-
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>URL Shortener</h1>
+    <input type="text" id="longUrl" placeholder="Enter Long URL">
+    <button onclick="shortenUrl()">Shorten</button>
+    <p id="shortUrl"></p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
