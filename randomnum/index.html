@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #generate, #copy {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        #output {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            resize: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="generate">Generate Numbers</button>
+        <button id="copy">Copy Numbers</button>
+        <textarea id="output" class="fade-in"></textarea>
+    </div>
+
+    <script>
+        document.getElementById("generate").addEventListener("click", function() {
+            var numbers = "6789";
+            var output = "";
+
+            for (var i = 0; i < 1100; i++) {
+                var line = "+91 ";
+                for (var j = 0; j < 10; j++) {
+                    var digit = Math.floor(Math.random() * 4) + 6; // Generates numbers between 6 and 9
+                line += digit;
+                }
+                output += line + "\n";
+            }
+
+            var outputTextarea = document.getElementById("output");
+            outputTextarea.classList.remove("fade-in");
+            setTimeout(function() {
+                outputTextarea.value = output;
+                outputTextarea.classList.add("fade-in");
+            }, 10);
+        });
+
+        document.getElementById("copy").addEventListener("click", function() {
+            var outputTextarea = document.getElementById("output");
+            outputTextarea.select();
+            document.execCommand("copy");
+        });
+    </script>
+</body>
+</html>
