@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
             shortUrl += characters.charAt(randomIndex);
         }
 
+        const domain = new URL(longUrl).hostname;
         const shortUrlPageContent = `
             <!DOCTYPE html>
             <html>
@@ -33,6 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const url = URL.createObjectURL(shortUrlBlob);
 
         shortUrlLink.href = url;
-        shortUrlLink.textContent = url;
+        shortUrlLink.textContent = domain + "/" + shortUrl;
     });
 });
