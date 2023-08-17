@@ -10,12 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        let shortUrl = "";
-        for (let i = 0; i < 4; i++) {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            shortUrl += characters.charAt(randomIndex);
-        }
+        function generateShortCode() {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let shortCode = '';
+  for (let i = 0; i < 4; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    shortUrl += characters.charAt(randomIndex);
+  }
 
         const domain = new URL(longUrl).hostname;
         const shortUrlPageContent = `
