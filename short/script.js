@@ -12,7 +12,7 @@ function generateShortUrl() {
         shortCode += randomChars.charAt(randomIndex);
     }
 
-    const shortUrl = 'https://domain.com/' + shortCode;
+    const shortUrl = 'https://ashin888.github.io/short/' + shortCode;
     document.getElementById('shortUrl').textContent = shortUrl;
     document.getElementById('shortUrl').setAttribute('href', shortUrl);
 }
