@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Random Number Generator</title>
+    <title>Hacker Random Number Generator</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #0F0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,6 +22,16 @@
             padding: 10px 20px;
             font-size: 16px;
             margin: 10px;
+            background-color: #ff0000; /* Red color */
+            color: #0F0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+
+        #generate:hover, #copy:hover {
+            background-color: #ff5555; /* Lighter red color on hover */
         }
 
         #output {
@@ -28,6 +39,11 @@
             height: 200px;
             margin: 10px;
             resize: none;
+            background-color: #111;
+            border: 1px solid #0F0;
+            color: #0F0;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
         }
 
         .fade-in {
@@ -42,9 +58,13 @@
 </head>
 <body>
     <div class="container">
-        <button id="generate">Generate Numbers</button>
-        <button id="copy">Copy Numbers</button>
+        <button id="generate">Execute Hack</button>
+        <button id="copy">Copy Data</button>
         <textarea id="output" class="fade-in"></textarea>
+        <div id="ipAddress" class="fade-in">
+    Thanks for Using<span id="userIp"></span>
+</div>
+
     </div>
 
     <script>
@@ -56,10 +76,11 @@
                 var line = "+91 ";
                 for (var j = 0; j < 10; j++) {
                     var digit = Math.floor(Math.random() * 4) + 6; // Generates numbers between 6 and 9
-                line += digit;
+                    line += digit;
                 }
                 output += line + "\n";
             }
+
 
             var outputTextarea = document.getElementById("output");
             outputTextarea.classList.remove("fade-in");
