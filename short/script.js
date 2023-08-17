@@ -17,5 +17,5 @@ function generateShortUrl() {
     const randomIndex = Math.floor(Math.random() * characters.length);
     shortUrl += characters.charAt(randomIndex);
   }
-  return `http://ashin888.github.io/${shortUrl}`;
+  return `http://ashin888.github.io/short/${shortUrl}`;
 }
