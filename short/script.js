@@ -1,40 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const generateButton = document.getElementById("generateButton");
-    const longUrlInput = document.getElementById("longUrl");
-    const shortUrlLink = document.getElementById("shortUrl");
+function generateShortUrl() {
+    const originalUrl = document.getElementById('originalUrl').value;
+    if (!originalUrl) {
+        alert('Please enter a URL');
+        return;
+    }
 
-    generateButton.addEventListener("click", function() {
-        const longUrl = longUrlInput.value;
-        if (longUrl === "") {
-            alert("Please enter a valid long URL.");
-            return;
-        }
+    const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let shortCode = '';
+    for (let i = 0; i < 4; i++) {
+        const randomIndex = Math.floor(Math.random() * randomChars.length);
+        shortCode += randomChars.charAt(randomIndex);
+    }
 
-        function generateShortCode() {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let shortCode = '';
-  for (let i = 0; i < 4; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    shortUrl += characters.charAt(randomIndex);
-  }
-
-        const domain = new URL(longUrl).hostname;
-        const shortUrlPageContent = `
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <meta http-equiv="refresh" content="0;url=${longUrl}">
-            </head>
-            <body>
-                Redirecting...
-            </body>
-            </html>
-        `;
-
-        const shortUrlBlob = new Blob([shortUrlPageContent], { type: "text/html" });
-        const url = URL.createObjectURL(shortUrlBlob);
-
-        shortUrlLink.href = url;
-        shortUrlLink.textContent = domain + "/" + shortUrl;
-    });
-});
+    const shortUrl = 'https://domain.com/' + shortCode;
+    document.getElementById('shortUrl').textContent = shortUrl;
+    document.getElementById('shortUrl').setAttribute('href', shortUrl);
+}
