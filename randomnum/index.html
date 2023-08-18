@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hacker Random Number Generator</title>
+    <title>1000+ Indian Number Generator</title>
     <style>
         body {
             font-family: 'Courier New', monospace;
             background-color: #000;
             color: #0F0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
         }
 
         .container {
+            padding: 20px;
             text-align: center;
         }
 
-        #generate, #copy {
+        #generate, #copy, #hack {
             padding: 10px 20px;
             font-size: 16px;
             margin: 10px;
-            background-color: #ff0000; /* Red color */
-            color: #0F0;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-family: 'Courier New', monospace;
         }
 
-        #generate:hover, #copy:hover {
-            background-color: #ff5555; /* Lighter red color on hover */
+        #generate {
+            background-color: #ff0000; /* Red color */
+            color: #0F0;
+        }
+
+        #copy {
+            background-color: #ffaa00; /* Yellow color */
+            color: #000;
+        }
+
+        #hack {
+            background-color: #00cc00; /* Green color */
+            color: #0F0;
+        }
+
+        #generate:hover, #copy:hover, #hack:hover {
+            opacity: 0.8;
         }
 
         #output {
-            width: 300px;
-            height: 200px;
-            margin: 10px;
+            width: 100%; /* Occupy the full width */
+            height: 300px; /* Increased box height */
+            margin: 10px 0;
             resize: none;
             background-color: #111;
             border: 1px solid #0F0;
@@ -58,13 +68,13 @@
 </head>
 <body>
     <div class="container">
-        <button id="generate">Execute Hack</button>
-        <button id="copy">Copy Data</button>
+        <button id="generate">Generate Numbers</button>
+        <button id="copy">Copy Numbers</button>
+        <button id="hack">Hack Now</button>
         <textarea id="output" class="fade-in"></textarea>
         <div id="ipAddress" class="fade-in">
-    Thanks for Using<span id="userIp"></span>
-</div>
-
+            Thanks for Using<span id="userIp"></span>
+        </div>
     </div>
 
     <script>
@@ -81,7 +91,6 @@
                 output += line + "\n";
             }
 
-
             var outputTextarea = document.getElementById("output");
             outputTextarea.classList.remove("fade-in");
             setTimeout(function() {
@@ -94,6 +103,10 @@
             var outputTextarea = document.getElementById("output");
             outputTextarea.select();
             document.execCommand("copy");
+        });
+
+        document.getElementById("hack").addEventListener("click", function() {
+            alert("You can't do at this time");
         });
     </script>
 </body>
