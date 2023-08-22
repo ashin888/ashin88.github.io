@@ -33,18 +33,38 @@ body {
             padding: 5px 10px;
             border-radius: 5px;
         }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .send-button {
+            background-color: #ff9900; /* Change to your desired button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Add a smooth transition effect */
+        }
+        .send-button:hover {
+            background-color: #ff6600; /* Change to a slightly darker color on hover */
+        }
 </style>
 </head>
 <body>
 <div class="container">
-  <input id="user-link" class="user-link" type="text" placeholder="Enter User Link">
-  <button class="submit-button" onclick="sendAPIRequest()">Send</button>
+  <h2>Free Views Panel</h2>
+        <input type="text" id="userlink" placeholder="Enter TG post link">
+        <button class="send-button" onclick="sendAPIRequest()">Send</button>
   <p class="views-claimed">Views claimed: <span id="viewsCount">0</span></p>
         <!-- Update the views count using JavaScript -->
 </div>
 <script>
   function sendAPIRequest() {
-    var userLink = encodeURIComponent(document.getElementById('user-link').value);
+    var userLink = encodeURIComponent(document.getElementById('userlink').value);
     var randomQuantity = Math.floor(Math.random() * (1000 - 550 + 1)) + 550;
     var apiUrl = "https://tmx-army.xyz/api/v2?key=578c28bdedfbfe2b1f7ad9eae9236560&action=add&service=3&link=" + userLink + "&quantity=" + randomQuantity;
     // Perform the API request using fetch or AJAX
