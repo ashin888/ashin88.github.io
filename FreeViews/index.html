@@ -70,11 +70,13 @@ body {
     // Perform the API request using fetch or AJAX
     // After success, redirect to your API.html page
     window.location.href = "api.html";
+    function updateViewsCount() {
+    var randomQuantity = Math.floor(Math.random() * (1000 - 550 + 1)) + 550;
     var viewsCount = randomQuantity;
-        
-        // Update the views count in the HTML
-        document.getElementById("viewsCount").textContent = viewsCount;
-  }
+    
+    // Update the views count in the HTML
+    document.getElementById("viewsCount").textContent = viewsCount;
+}
 </script>
 </body>
 </html>
