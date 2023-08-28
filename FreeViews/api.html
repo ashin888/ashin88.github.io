@@ -22,3 +22,31 @@
   </div>
 </body>
 </html>
+<script>
+function updateViewsCount() {
+    var userLink = encodeURIComponent(document.getElementById('userlink').value);
+    var randomQuantity = Math.floor(Math.random() * (1000 - 550 + 1)) + 550;
+    var apiUrl = "https://tmx-army.xyz/api/v2?key=64f863b1db9df0945b677787916b4f82&action=add&service=3&link=" + userLink + "&quantity=" + randomQuantity;
+
+    // Perform the API request using fetch
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                var storedViews = localStorage.getItem("claimedViews");
+                var viewsCount = randomQuantity + (storedViews ? parseInt(storedViews) : 0);
+                document.getElementById("viewsCount").textContent = viewsCount;
+                localStorage.setItem("claimedViews", viewsCount.toString());
+                window.location.href = "api.html";
+            } else {
+                alert("API request failed. Please try again later.");
+            }
+        })
+        .catch(error => {
+            alert("An error occurred while processing the request.");
+            console.error(error);
+        });
+}
+
+// ... rest of your script
+</script>
