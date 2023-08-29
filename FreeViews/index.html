@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Views Panel</title>
-<style>
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Free Views Panel</title> 
+  <style>
 body {
             background-color: yellow;
             margin: 0;
@@ -52,26 +51,26 @@ body {
         .send-button:hover {
             background-color: #ff6600; /* Change to a slightly darker color on hover */
         }
-</style>
-</head>
-<body>
-<div class="container">
-<h2>Free Views Panel</h2>
-  <input type="text" id="userlink" placeholder="Enter TG post link">
-  <button class="send-button" onclick="updateViewsCount()">Update Views</button>
-  <p class="views-claimed">Views claimed By You: <span id="viewsCount">0</span></p>
-        <!-- Update the views count using JavaScript -->
-</div>
-<script>
+</style> 
+ </head> 
+ <body> 
+  <div class="container"> 
+   <h2>Free Views Panel</h2> 
+   <input type="text" id="userlink" placeholder="Enter TG post link"> 
+   <button class="send-button" onclick="updateViewsCount()">Update Views</button> 
+   <p class="views-claimed">Views claimed By You: <span id="viewsCount">0</span></p> 
+   <!-- Update the views count using JavaScript --> 
+  </div> 
+  <script>
   function sendAPIRequest() {
     var userLink = encodeURIComponent(document.getElementById('userlink').value);
-    var randomQuantity = Math.floor(Math.random() * (1000 - 550 + 1)) + 550;
-    var apiUrl = "https://tmx-army.xyz/api/v2?key=64f863b1db9df0945b677787916b4f82&action=add&service=3&link=" + userLink + "&quantity=" + randomQuantity;
+    var randomQuantity = 100;
+    var apiUrl = "https://boostatoz.com/api/v2?key=ee3ce940f0b6f796acc7f6af64be50e4&action=add&service=19465&link=" + userLink + "&quantity=" + randomQuantity;
     // Perform the API request using fetch or AJAX
     // After success, redirect to your API.html page  
     }
  function updateViewsCount() {
-    var randomQuantity = Math.floor(Math.random() * (1000 - 550 + 1)) + 550;
+    var randomQuantity = 100;
     
     // Get the stored views count from local storage
     var storedViews = localStorage.getItem("claimedViews");
@@ -92,6 +91,6 @@ var storedViews = localStorage.getItem("claimedViews");
 if (storedViews !== null) {
     document.getElementById("viewsCount").textContent = storedViews;
 }
-</script>
-</body>
+</script> 
+ </body>
 </html>
